@@ -8,10 +8,32 @@
 <body>
 <!-- Задание 1.
 
-Написать, функцию, которая принимает в качестве аргумента объект и выводит в консоль все ключи и значения только собственных свойств. Данная функция не должна возвращать значение.
+Написать, функцию, 
+которая принимает в качестве аргумента объект 
+и выводит в консоль все ключи и значения 
+только собственных свойств. 
+Данная функция не должна возвращать значение.
  -->
   <script>
-    console.log('hey')
-  </script>
+  const person = {
+  city: "Moscow",
+  }
+  const student = Object.create(person);
+
+  student.ownCity = "Piter";
+
+  for (let key in student) {
+    if(student.hasOwnProperty(key)){
+      console.log(key)
+    }
+  }
+
+  function printOwnProperty(func) {
+    for (let key in student) {
+    if(student.hasOwnProperty(key)){
+      console.log(key)
+    }
+  }
+</script>
 </body>
 </html>
